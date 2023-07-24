@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    margin: auto; 
+    background-image: url("фон.jpg" );
+    background-size: cover;
+
+}
+.water{
+    height: 100vh;
+    background: url(water.png) ;
+    animation: water 0.3s infinite;
+}
+@keyframes water {
+    0%{
+        background-position: -10% -10%;
+    }
+    100%{
+        background-position: 20% 100%;
+    }
+    
+}
+wrape{
+    background-image: url("фон.jpg");
+    margin-top: 10%;
+    position: relative;
+   
+    perspective: 40000000px;
+    
+}
+.cube{
+    margin: 200px;
+    width: 300px;
+    height:300px ;
+    transform-style: preserve-3d;
+    
+}
+
+
+.side{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border: 5px solid #fff;
+
+
+}
+.front{
+    transform:  translateZ(150px);
+}
+.back{
+    transform: rotateY(180deg) translateZ(150px);
+}
+.right{
+    transform: rotateY(90deg) translateZ(150px);
+}
+.left{
+    transform: rotateY(-90deg) translateZ(150px);
+}
+.top{
+    transform: rotateX(90deg) translateZ(150px);
+}
+.bottom{
+    transform: rotateX(-90deg) translateZ(150px);
+}
+@keyframes loop{
+    from {transform: rotateX(0deg) rotateY(0deg);}
+    to {transform: rotateX(360deg) rotateY(360deg);}
+
+}  
+.cube{
+    animation: loop 10s linear;
+} 
